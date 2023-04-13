@@ -4,7 +4,35 @@
 <p>終於，SSH要成功了嗎? 20230316 By 40723217</p>
 <p>=======</p>
 <p>0413，重新測試SSH putty推送</p>
+<h1>SSH同步</h1>
+<p>用SSH同步的方法:</p>
 <p></p>
+<p>首先須下載putty</p>
+<p>使用<span>puttygen.exe製作鑰匙</span></p>
+<p><span>puttygen.exe會根據游標移動軌跡製作獨一無二的鑰匙，製作完後，會得到兩把鑰匙</span></p>
+<p><span>上面較長的是放在網路上的，也就是要貼到自己github帳號下的SSH鑰匙</span></p>
+<p><span><img alt="" height="96" src="/images/5.jpg" width="528"/></span></p>
+<p><span>而另一把則是私人的鑰匙，用來對應github上的這一把，將它存在Y槽(為確保可攜系統到另一個裝置時能確實找到)，格式一定要是.ppk</span></p>
+<p><span></span></p>
+<p><span>開啟putty.exe</span></p>
+<p><span><img alt="" height="195" src="/images/2.jpg" width="396"/></span></p>
+<p><span>HostName(or IP address)這欄打上github.com，因為我們是使用github建立網站的</span></p>
+<p><span>Saved Sessions打上任意英數字串 例:ABC</span></p>
+<p><span><img alt="" height="310" src="/images/3.jpg" width="423"/></span></p>
+<p><span>左側Connection&gt;SSH&gt;Auth&gt;Credentials，Pirvate key file for authentication這欄找到剛剛存在Y槽的鑰匙，然後回到最上面Save</span></p>
+<p><span>之後按右下的Open就完成了</span></p>
+<p><span></span></p>
+<p><span>到小組倉儲站</span></p>
+<p><span><img alt="" height="360" src="/images/4.jpg" width="400"/></span></p>
+<p><span>Code底下copy網址，選使用SSH的</span></p>
+<p><span>把@後的github.com替換成剛才putty.exe中Saved Sessions打的任意英數 例:ABC</span></p>
+<p><span>進入tmp，git clone 改完的網址，空格後打上將要建立的資料夾名稱</span></p>
+<p>就成功使用SSH，clone小組倉儲的內容到近端了</p>
+<p>之後要更改小組站時，只要進到這個新資料夾就能直接打指令了</p>
+<p><span> </span></p>
+<h2><span>關於git clone</span></h2>
+<p><span></span></p>
+<p><span></span></p>
 <h1>bubbleRobTutorial</h1>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/KS94BnPma7c" title="YouTube video player" width="560"></iframe></p>
 <script>
