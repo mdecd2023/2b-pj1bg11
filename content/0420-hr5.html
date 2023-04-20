@@ -2,7 +2,7 @@
         <head>
         <title>2b-pj1bg11</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -141,13 +141,23 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='SSH同步.html'>Next</a> >> SSH同步<br /><h1>About</h1>
-<p>cmsimde_site</p>
-<p>=======</p>
-<p>終於，SSH要成功了嗎? 20230316 By 40723217</p>
-<p>=======</p>
-<p>0413，重新測試SSH putty推送</p>
-<br /> <a href='SSH同步.html'>Next</a> >> SSH同步</div>
+    <div id="tipue_search_content">0420-hr4 << <a href='0420-hr4.html'>Previous</a> <br /><h1>0420-hr5</h1>
+<p><span>Q:下一個問題是在python程式中，import keyboard應該是意旨匯入"鍵盤"的函式，我的理解有誤嗎?</span></p>
+<p><span>A:你的理解有一點小錯誤，<code>keyboard</code><span> 模組並不是匯入整個鍵盤的函式，而是一個 Python 第三方庫，可以用來監聽和模擬按鍵事件。在使用 </span><code>keyboard</code><span> 模組時，通常會使用其中的 </span><code>on_press</code><span> 和 </span><code>on_release</code><span> 方法來註冊按鍵事件的處理函數，或者使用 </span><code>send</code><span> 方法來模擬按鍵事件。</span></span></p>
+<p><span>Q:好，謝謝你讓我理解了。那麼 Traceback (most recent call last): File "Y:\CoppeliaSimEdu\newbing_bubbleRob\newbing_bubbleRob_remoteapi1.py", line 5, in &lt;module&gt; import keyboard ModuleNotFoundError: No module named 'keyboard' </span></p>
+<p><span>的錯誤而言，是代表著不存在這個第三方庫?</span></p>
+<p><span>A:是的，這個錯誤提示意味著在你的 Python 環境中沒有安裝 <code>keyboard</code><span> 這個第三方庫。你需要先安裝這個庫才能在你的 Python 程式中使用它。你可以使用 </span><code>pip</code><span> 來安裝這個庫，請在終端機中輸入以下指令：</span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">pip install keyboard
+</pre>
+<p><span>安裝完成後，你應該就可以在你的 Python 程式中成功匯入 </span><code>keyboard</code><span> 了。</span></p>
+<p><span>Q:但我出現了 Fatal error in launcher: Unable to create process using '"F:\senior\mde2022\portable_python_3.10.6\Python310\python.exe" "y:\Python310\Scripts\pip.exe" install keyboard': ??????????? 這個問題...... 等等，這個F;\的路徑很奇怪，我想我得修復它 我的y槽路徑實際上是使用可攜帶系統虛擬的，路徑是"F:\3down\wcm2023\python311_w1_cd2023_cmsimde\data" 我該如何將上述路徑導正?</span></p>
+<p><span>在這裡，我和chatgpt鬼打牆了，所以讓我們直接跳到正確方法。</span></p>
+<p><span>A:這個錯誤提示說在執行命令 <code>"F:\senior\mde2022\portable_python_3.10.6\Python310\python.exe" "y:\Python310\Scripts\pip.exe" install keyboard</code><span> 時遇到了致命錯誤。具體原因可能有很多，但是根據你之前的描述，你使用的 Python 程序並非安裝在 </span><code>F:\senior\mde2022\portable_python_3.10.6\Python310\</code><span> 目錄下，而是安裝在 </span><code>F:\3down\wcm2023\python311_w1_cd2023_cmsimde\data\Python310\</code><span> 目錄下。因此，如果你想安裝 </span><code>keyboard</code><span> 模塊，你需要在命令行中使用正確的 Python 程序路徑和 pip 工具路徑。以下是可能適用於你的命令：</span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">F:\3down\wcm2023\python311_w1_cd2023_cmsimde\data\Python310\python.exe -m pip install keyboard
+</pre>
+<p><span>這個命令使用了正確的 Python 程序路徑和 pip 工具路徑，它將 </span><code>keyboard</code><span> 模塊安裝在你的 Python 環境中。請注意，你需要在命令行中切換到包含上述 Python 程序的目錄中才能運行此命令。</span></p>
+<p><span></span></p>
+<p><span>最終，我的BubbleRob終於得以運行。</span></p><br />0420-hr4 << <a href='0420-hr4.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

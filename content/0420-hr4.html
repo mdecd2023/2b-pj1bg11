@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='SSH同步.html'>SSH同步</a><ul class='dropdown'><li><a href='關於git pull.html'>關於git pull</a></li></ul><li><a href='bubbleRobTutorial.html'>bubbleRobTutorial</a><li class='has-children'><a href='bubblerob-control.html'>bubblerob-control</a><ul class='dropdown'><li><a href='0420-1hr.html'>0420-1hr</a><li><a href='0420-hr2.html'>0420-hr2</a><li><a href='0420-hr3.html'>0420-hr3</a><li><a href='0420-hr4.html'>0420-hr4</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='SSH同步.html'>SSH同步</a><ul class='dropdown'><li><a href='關於git pull.html'>關於git pull</a></li></ul><li><a href='bubbleRobTutorial.html'>bubbleRobTutorial</a><li class='has-children'><a href='bubblerob-control.html'>bubblerob-control</a><ul class='dropdown'><li><a href='0420-1hr.html'>0420-1hr</a><li><a href='0420-hr2.html'>0420-hr2</a><li><a href='0420-hr3.html'>0420-hr3</a><li><a href='0420-hr4.html'>0420-hr4</a><li><a href='0420-hr5.html'>0420-hr5</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,7 +141,58 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">0420-hr3 << <a href='0420-hr3.html'>Previous</a> <br /><h1>0420-hr4</h1><br />0420-hr3 << <a href='0420-hr3.html'>Previous</a> </div>
+    <div id="tipue_search_content">0420-hr3 << <a href='0420-hr3.html'>Previous</a> <a href='0420-hr5.html'>Next</a> >> 0420-hr5<br /><h1>0420-hr4</h1>
+<p>接著我便遇到了<span>&gt;python3 -u test.py &gt;Exit code: 9009 的問題，繼續使用chatgpt解決問題。</span></p>
+<p><span>A:</span>錯誤代碼9009通常表示找不到可執行的命令。在這種情況下，可能是由於系統環境變數中的路徑未設置正確所致。</p>
+<p>您可以嘗試檢查系統環境變數，並確保Python的路徑已經被添加到Path變數中。如果沒有，請將Python的安裝路徑添加到Path中。在Windows上，您可以這樣做：</p>
+<ol>
+<li>開啟「控制台」並點擊「系統」</li>
+<li>點擊「進階系統設置」</li>
+<li>在「環境變數」下找到「Path」並點擊「編輯」</li>
+<li>在新的窗口中，點擊「新增」，並添加Python的安裝路徑（例如：C:\Python310）</li>
+<li>點擊「確定」，保存所有更改</li>
+</ol>
+<p>完成後，關閉Scite並重新打開，然後再次嘗試運行您的Python代碼，看看問題是否已經解決了。</p>
+<p>Q:<span>我將環境變數的「path」已經添加了Y:\Python310作為路徑，但問題依舊沒有解決，該如何是好?</span></p>
+<p>A:如果已經設置好環境變數，而且路徑中已經包含了 Python 的安裝路徑，那麼可能問題出現在 Scite 的設置中。請再次檢查 Scite 的設置，確保以下兩點：</p>
+<ol>
+<li>
+<p>編譯器路徑：在 Scite 中選擇「選項」&gt;「編譯器設置」，確認 Python 的執行檔路徑是否正確設置為 Y:\Python310\python.exe。如果路徑不正確，請修改為正確的路徑。</p>
+</li>
+<li>
+<p>Python 版本：同樣在「編譯器設置」中，確認所選擇的 Python 版本是否與安裝在電腦上的版本相對應。如果版本不對應，請選擇正確的版本。</p>
+</li>
+</ol>
+<p>如果以上兩點都確認無誤，那麼可能是 Scite 的某些設置或者系統環境的問題，這時可以考慮卸載 Scite 並重新安裝，或者嘗試在其他電腦上運行相同的代碼，檢查是否存在相同的問題。</p>
+<p>Q:<span>如果我想為Scite正確設置python路徑，我該如何在 Open User Options 中添加「Y:\Python310\python.exe」路徑?</span></p>
+<p><span>並且我的 Open User Options 是一片空白，只有你方才要我添加的</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># This is an example SciTE properties file with a couple of settings
+# that show how to configure SciTE to work with Python.
+
+# Define the location of the Python executable.
+command.go.*.py=python3 -u $(FileNameExt)
+
+# Enable the Python lexer.
+lexer.$(file.patterns.py)=python
+
+# Set the encoding for Python source code files.
+code.page=65001
+</pre>
+<p><span>這樣仍然不足，那請問是要修哪邊?</span></p>
+<p>A:<span>如果你的 Open User Options 中只有上述內容，那麼可以手動添加以下內容來指定 Python 路徑：</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Define the location of the Python executable.
+command.go.*.py=python Y:/wscite/Python310/python.exe "$(FilePath)"</pre>
+<p><span>請將上述內容添加至 Open User Options，然後保存並重新啟動 Scite。之後嘗試運行你的 Python 程式，看看是否能夠正常執行。</span></p>
+<p><span>Q:「Y:/wscite/Python310/python.exe "$(FilePath)"」是指我安裝python310的路徑嗎?</span></p>
+<p><span>A:是的，这里的路径指的是你安装 Python 3.10 的路径。如果你安装的 Python 版本不是 3.10，那么你需要将路径中的 "Python310" 替换为你安装的 Python 版本号。</span></p>
+<p><span>Q:但我的路徑是「Y:\Python310\python.exe」 而我的Scite路徑則是「Y:\wscite\sciTE.exe」 請修正一下上方代碼</span></p>
+<p><span>A:非常抱歉，我打錯了，下面是正確的代碼：</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">command.go.*.py=Y:/Python310/python.exe "$(FilePath)"
+</pre>
+<p><span>請注意反斜線改成斜線，並且路徑前加上磁盤標記Y:，如此一來，Scite就能夠找到Python的路徑了。</span></p>
+<p><span>我終於讓我的Scite找到路徑了！終於能夠啟動.py檔案了</span></p>
+<p><span>到了這裡，終於不再出現9009錯誤，我也得以啟動py檔案。</span></p>
+<br />0420-hr3 << <a href='0420-hr3.html'>Previous</a> <a href='0420-hr5.html'>Next</a> >> 0420-hr5</div>
         
     <!-- footer -->
       <div class="container">
