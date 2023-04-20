@@ -90,17 +90,20 @@ frameStops: {
 <p dir="auto">Q:我沒有移動檔案，單純只是在Scite的上輸入python代碼 print("hi") ，然後儲存在Scite的根目錄上，卻還是發生上述問題，該如何解決?</p>
 <p dir="auto">A:如果您在 Scite 的根目錄中建立一個 Python 檔案，並在該檔案中加入 print("hi") 代碼，然後在 Scite 中運行該檔案時出現了 "系統找不到指定的檔案" 的錯誤，這可能是因為 Scite 沒有正確設置當前工作目錄。</p>
 <p dir="auto">請確保您正在使用的 Scite 版本支援當前工作目錄設置，並且您已經正確地設置了當前工作目錄。您可以在 Scite 中通過點擊 "Options" 菜單中的 "Open User Options File" 來編輯 Scite 的用戶設置文件，然後添加以下行：</p>
-<pre class="brush:plain;auto-links:false;toolbar:false" contenteditable="false">cwd=$(FilePath)</pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cwd=$(FilePath)</pre>
 <p dir="auto"><br/><br/>這個設置將當前工作目錄設置為當前打開的檔案所在的目錄。這樣，當您運行 Python 程式時，Python 將會在當前工作目錄中搜索檔案，而不是在 Scite 的根目錄中搜索檔案，從而避免 "系統找不到指定的檔案" 的錯誤。</p>
 <p dir="auto">Q:我已經嘗試加入了以上代碼<br/>目前我的環境如下(以基本目錄為Y硬碟):<br/>Y:\wscite 為Scite目錄<br/>Y:\Python310 為python3.10.0目錄<br/>而python代碼 print("hi") 儲存名稱為 test.py 並儲存在scite目錄下<br/>但依舊出現同樣的問題，該如何解決?</p>
 <p dir="auto">A:如果您已經在 Scite 的用戶設置文件中設置了當前工作目錄，但仍然出現 "系統找不到指定的檔案" 的錯誤，您可以試試以下解決方案：<br/>1.確保 Python 已經安裝並設置好環境變數：請確保 Python 已經成功安裝在您的電腦上，並且已經設置好環境變數，以便您可以在命令提示符號或 Scite 中運行 Python 程式。<br/>2.檢查 Scite 設置：請確保 Scite 的設置正確，例如編譯器路徑、Python 版本等。<br/>3.檢查 Python 程式碼：請確保您的 Python 程式碼沒有錯誤，例如語法錯誤或拼寫錯誤等。<br/>4.嘗試使用絕對路徑：請嘗試使用絕對路徑指定 Python 程式碼所在的位置，以確保 Scite 可以正確找到該檔案。例如，在 Scite 中使用以下代碼來執行您的 Python 程式碼：</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import os os.system("Y:/wscite/Python310/python.exe Y:/wscite/test.py")</pre>
 <p dir="auto"><br/><br/>這個代碼將 Python 程式碼 test.py 所在的絕對路徑傳遞給 Python 解釋器，從而避免了 "系統找不到指定的檔案" 的錯誤。<br/>如果以上方法仍然無法解決問題，您可以嘗試重新安裝 Scite 和 Python，或者嘗試使用其他的程式碼編輯器來編輯和運行 Python 程式碼。</p>
 <p dir="auto">Q:我發現它輸入此程式碼後跳亂碼了......</p>
-<p dir="auto">A:如果您在 Scite 中輸入 Python 程式碼後出現亂碼，可能是因為 Scite 的編碼格式與您的 Python 程式碼的編碼格式不一致所導致的。<br/>您可以嘗試以下方法解決問題：<br/>設置 Scite 的編碼格式：打開 Scite，從菜單欄選擇「選項」 &gt;「編輯器設置」 &gt;「默認編碼」，選擇與您的 Python 程式碼相同的編碼格式。<br/>轉換 Python 程式碼的編碼格式：使用一些編輯器工具（例如 Notepad++）將您的 Python 程式碼轉換為 Scite 使用的編碼格式，以確保 Scite 正確顯示您的程式碼。<br/>在程式碼中添加編碼宣告：在 Python 程式碼的開頭添加一行編碼宣告，例如：<br/><code class="notranslate"># -*- coding: utf-8 -*-</code><br/>這個宣告將告訴 Python 程式碼的解釋器使用 UTF-8 編碼格式來解讀程式碼。<br/>希望以上方法能夠幫助您解決問題。</p>
+<p dir="auto">A:如果您在 Scite 中輸入 Python 程式碼後出現亂碼，可能是因為 Scite 的編碼格式與您的 Python 程式碼的編碼格式不一致所導致的。<br/>您可以嘗試以下方法解決問題：<br/>設置 Scite 的編碼格式：打開 Scite，從菜單欄選擇「選項」 &gt;「編輯器設置」 &gt;「默認編碼」，選擇與您的 Python 程式碼相同的編碼格式。<br/>轉換 Python 程式碼的編碼格式：使用一些編輯器工具（例如 Notepad++）將您的 Python 程式碼轉換為 Scite 使用的編碼格式，以確保 Scite 正確顯示您的程式碼。<br/>在程式碼中添加編碼宣告：在 Python 程式碼的開頭添加一行編碼宣告，例如：</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># -*- coding: utf-8 -*-</pre>
+<p dir="auto"><br/><br/>這個宣告將告訴 Python 程式碼的解釋器使用 UTF-8 編碼格式來解讀程式碼。<br/>希望以上方法能夠幫助您解決問題。</p>
 <p dir="auto">Q:在運行 import os<br/>os.system("Y:/wscite/Python310/python.exe Y:/wscite/test.py")<br/>程式碼後，問題依舊是找不到指定的檔案<br/>要不然試著一個個排除吧</p>
 <p dir="auto">在那之後就是一大段的排除錯誤。</p>
-<p dir="auto">當我進行到<br/>A:如果在打開 Open User Options 後看到空白的介面，這代表你的 Scite 還沒有任何設置選項。你可以手動添加設置選項，方法如下：</p>
+<p dir="auto">當我進行到半個鐘頭後，也步入了正軌。</p>
+<p dir="auto"><br/>A:如果在打開 Open User Options 後看到空白的介面，這代表你的 Scite 還沒有任何設置選項。你可以手動添加設置選項，方法如下：</p>
 <p dir="auto">創建一個空白的文本檔案。<br/>將以下內容複製到文件中：</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#This is an example SciTE properties file with a couple of settings
 #that show how to configure SciTE to work with Python.
